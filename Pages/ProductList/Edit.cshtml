@@ -1,0 +1,58 @@
+﻿@page
+@model FirstRazorPage.Pages.ProductList.EditModel
+@{
+}
+
+<br />
+<h2 class="text-info"> Edit product </h2>
+<div class="border container" style="padding: 30px">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly">
+
+        </div>
+        <input type="hidden" asp-for="Product.Id" />
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Product.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Product.Name" class="form-control" />
+                <span asp-validation-for="Product.Name"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Product.Code"></label>
+            </div>
+            <div class="col-6">
+                <input readonly asp-for="Product.Code" class="form-control"></input>
+                <span asp-validation-for="Product.Code"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Product.Qty"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Product.Qty" class="form-control" />
+                <span asp-validation-for="Product.Qty"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Save" class="btn btn-outline-primary form-control" />
+            </div>
+            <div class="col-3 offset-3">
+                <a class="btn btn-outline-success form-control" asp-page="Index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial.cshtml">
+}
+
+
+
